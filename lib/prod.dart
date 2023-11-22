@@ -51,7 +51,7 @@ class _prodState extends State<prod> {
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontSize: 10,
-                          fontFamily: "poppins",
+                          fontFamily: "sans serrif",
                           height: 1.5,
                           fontWeight: FontWeight.normal,
                         ),
