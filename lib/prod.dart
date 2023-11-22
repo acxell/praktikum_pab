@@ -11,6 +11,11 @@ class Prod extends StatefulWidget {
 class _ProdState extends State<Prod> {
   bool change = false;
 
+  List prod = [
+    {"img": "assets/images/look.jpeg", "txt": "White Plain Shirt"},
+    {"img": "assets/images/kin.jpeg", "txt": "Black Coat"}
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,9 +44,10 @@ class _ProdState extends State<Prod> {
               width: 500,
               height: 560,
               child: ListView.builder(
-                  itemCount: 3,
+                  itemCount: prod.length,
                   itemBuilder: (context, index) {
-                    return list_prod();
+                    return list_prod(
+                        img: prod[index]["img"], txt: prod[index]["txt"]);
                   }),
             )
           ],
