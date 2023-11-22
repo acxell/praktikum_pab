@@ -14,7 +14,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
 
   List<Widget> _screenList = [
     home(),
-    prod(),
+    Prod(),
   ];
 
   void change(int Index) {
