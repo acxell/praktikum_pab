@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:praktikum_1/home.dart';
 import 'package:praktikum_1/prod.dart';
+import 'package:praktikum_1/profile.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -15,6 +16,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   List<Widget> _screenList = [
     home(),
     Prod(),
+    Profile(),
   ];
 
   void change(int Index) {
@@ -35,6 +37,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(icon: Icon(Icons.shop), label: 'Shop'),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile')
           ]),
     );
   }

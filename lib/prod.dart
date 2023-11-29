@@ -13,6 +13,14 @@ class _ProdState extends State<Prod> {
 
   List prod = [
     {"img": "assets/images/look.jpeg", "txt": "White Plain Shirt"},
+    {"img": "assets/images/a.jpeg", "txt": "Brown Plain Shirt"},
+    {"img": "assets/images/b.jpeg", "txt": "Cream Plain Shirt"},
+    {"img": "assets/images/c.jpeg", "txt": "Green Plain Shirt"},
+    {"img": "assets/images/d.jpeg", "txt": "Yellow Plain Shirt"},
+    {"img": "assets/images/e.jpeg", "txt": "Black Shirt"},
+    {"img": "assets/images/f.jpeg", "txt": "Green Bomber"},
+    {"img": "assets/images/g.jpeg", "txt": "Flanel"},
+    {"img": "assets/images/h.jpeg", "txt": "Black Bag"},
     {"img": "assets/images/kin.jpeg", "txt": "Black Coat"}
   ];
 
