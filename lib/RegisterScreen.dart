@@ -15,7 +15,9 @@ class _registerState extends State<RegisterScreen> {
 
   TextEditingController namaController = TextEditingController();
   TextEditingController nbiController = TextEditingController();
-  TextEditingController kelasController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController alamatController = TextEditingController();
+  TextEditingController igController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,7 @@ class _registerState extends State<RegisterScreen> {
                     margin: EdgeInsets.only(top: 60),
                     child: Image.asset(
                       'assets/images/otakk.png',
-                      scale: 3,
+                      scale: 4,
                     ),
                   ),
                   Text(
@@ -54,11 +56,13 @@ class _registerState extends State<RegisterScreen> {
                   Expanded(
                       child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       textFieldCustom('Masukkan Nama', namaController),
                       textFieldCustom('Masukkan NBI', nbiController),
-                      textFieldCustom('Masukkan kelas', kelasController),
+                      textFieldCustom('Masukkan Email', emailController),
+                      textFieldCustom('Masukkan Alamat', alamatController),
+                      textFieldCustom('Masukkan Akun Instagram', igController),
                       Padding(
                         padding: const EdgeInsets.only(
                           left: 25,
@@ -76,7 +80,9 @@ class _registerState extends State<RegisterScreen> {
                             if (formkey.currentState!.validate()) {
                               print(namaController.text);
                               print(nbiController.text);
-                              print(kelasController.text);
+                              print(emailController.text);
+                              print(alamatController.text);
+                              print(igController.text);
                               final SharedPreferences prefs =
                                   await SharedPreferences.getInstance();
 
@@ -84,7 +90,10 @@ class _registerState extends State<RegisterScreen> {
                                   'nama', namaController.text);
                               await prefs.setString('nbi', nbiController.text);
                               await prefs.setString(
-                                  'kelas', kelasController.text);
+                                  'email', emailController.text);
+                              await prefs.setString(
+                                  'alamat', alamatController.text);
+                              await prefs.setString('ig', igController.text);
 
                               Navigator.pushReplacement(
                                 context,

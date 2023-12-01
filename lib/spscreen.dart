@@ -35,17 +35,30 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Colors.white,
-        child: Center(
-          child: Image.asset(
-            'assets/images/uniqlo.jpeg',
-            scale: 3,
-          ),
-        ),
-      ),
-    );
+        body: Container(
+      width: double.infinity,
+      height: double.infinity,
+      color: Color.fromARGB(255, 1, 80, 13),
+      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        Expanded(
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Image.asset(
+              "assets/images/pers.png",
+              scale: 2,
+            ),
+            Text(
+              "PRAKTIKUM PAB 2023",
+              style: TextStyle(
+                fontSize: 25,
+                fontFamily: "poppins",
+                height: 2,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ]),
+        )
+      ]),
+    ));
   }
 }

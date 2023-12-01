@@ -13,18 +13,24 @@ class page1 extends StatefulWidget {
 class _page1State extends State<page1> {
   String? nbi;
   String? nama;
-  String? kelas;
+  String? email;
+  String? alamat;
+  String? ig;
 
   void data() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     final String? _nama = prefs.getString('nama');
     final String? _nbi = prefs.getString('nbi');
-    final String? _kelas = prefs.getString('kelas');
+    final String? _email = prefs.getString('email');
+    final String? _alamat = prefs.getString('alamat');
+    final String? _ig = prefs.getString('ig');
 
     setState(() {
       nbi = _nbi;
       nama = _nama;
-      kelas = _kelas;
+      email = _email;
+      alamat = _alamat;
+      ig = _ig;
     });
   }
 
