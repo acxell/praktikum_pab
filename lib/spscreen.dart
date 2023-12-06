@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
         }));
       } else {
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (build) {
-          return pinScreen();
+          return RegisterScreen();
         }));
       }
     });

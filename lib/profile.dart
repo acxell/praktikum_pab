@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:praktikum_1/pinsrc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -111,6 +113,21 @@ class _ProfileState extends State<Profile> {
                           ),
                         ),
                       ],
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return pinScreen();
+                          }),
+                        );
+                      },
+                      child: Text("Keluar"),
+                      style: ButtonStyle(
+                        fixedSize: MaterialStateProperty.all(
+                            Size(250, 40)), // Set the button size
+                      ),
                     ),
                   ],
                 )

@@ -120,28 +120,6 @@ class _page1State extends State<page1> {
                         Size(250, 40)), // Set the button size
                   ),
                 ),
-                ElevatedButton(
-                  onPressed: () async {
-                    final SharedPreferences prefs =
-                        await SharedPreferences.getInstance();
-
-                    await prefs.remove('nbi');
-                    await prefs.remove('nama');
-                    await prefs.remove('kelas');
-
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) {
-                        return RegisterScreen();
-                      }),
-                    );
-                  },
-                  child: Text("Keluar"),
-                  style: ButtonStyle(
-                    fixedSize: MaterialStateProperty.all(
-                        Size(250, 40)), // Set the button size
-                  ),
-                ),
               ],
             ),
           ],
