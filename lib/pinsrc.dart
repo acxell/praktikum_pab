@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:praktikum_1/RegisterScreen.dart';
+import 'package:praktikum_1/botnavbar.dart';
 import 'package:praktikum_1/page1.dart';
 import 'package:praktikum_1/widget/fieldCustom.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -94,7 +95,7 @@ class _pinScreenState extends State<pinScreen> {
                                           Navigator.pushReplacement(context,
                                               MaterialPageRoute(
                                                   builder: (build) {
-                                            return page1();
+                                            return BottomNavigation();
                                           }));
                                         } else {
                                           showDialog<String>(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:praktikum_1/RegisterScreen.dart';
+import 'package:praktikum_1/land.dart';
 import 'package:praktikum_1/page1.dart';
 import 'package:praktikum_1/pinsrc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -23,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
       if (nbi != null) {
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (build) {
-          return page1();
+          return landingPage();
         }));
       } else {
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (build) {

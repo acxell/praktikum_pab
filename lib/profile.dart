@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:praktikum_1/page1.dart';
 import 'package:praktikum_1/pinsrc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -10,6 +11,36 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  String? nbi;
+  String? nama;
+  String? email;
+  String? alamat;
+  String? ig;
+
+  void data() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final String? _nama = prefs.getString('nama');
+    final String? _nbi = prefs.getString('nbi');
+    final String? _email = prefs.getString('email');
+    final String? _alamat = prefs.getString('alamat');
+    final String? _ig = prefs.getString('ig');
+
+    setState(() {
+      nbi = _nbi;
+      nama = _nama;
+      email = _email;
+      alamat = _alamat;
+      ig = _ig;
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    data();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +83,7 @@ class _ProfileState extends State<Profile> {
                 SizedBox(height: 4),
                 Center(
                     child: Text(
-                  "Acxell Rizada Sudigto",
+                  "$nama",
                   style: TextStyle(
                     fontSize: 12,
                     fontFamily: "poppins",
@@ -63,10 +94,10 @@ class _ProfileState extends State<Profile> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Row(
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.person_2_sharp, size: 30),
                         Text(
-                          "1462100131",
+                          "$nbi",
                           style: TextStyle(
                             fontSize: 12,
                             fontFamily: "poppins",
@@ -76,10 +107,10 @@ class _ProfileState extends State<Profile> {
                       ],
                     ),
                     Row(
-                      children: const <Widget>[
-                        Icon(Icons.class_, size: 30),
+                      children: <Widget>[
+                        Icon(Icons.email_outlined, size: 30),
                         Text(
-                          "A - 1",
+                          "$email",
                           style: TextStyle(
                             fontSize: 12,
                             fontFamily: "poppins",
@@ -89,10 +120,10 @@ class _ProfileState extends State<Profile> {
                       ],
                     ),
                     Row(
-                      children: const <Widget>[
+                      children: <Widget>[
                         Icon(Icons.home, size: 30),
                         Text(
-                          "Bumi Gedangan Indah, Sidoarjo",
+                          "$alamat",
                           style: TextStyle(
                             fontSize: 12,
                             fontFamily: "poppins",
@@ -102,10 +133,10 @@ class _ProfileState extends State<Profile> {
                       ],
                     ),
                     Row(
-                      children: const <Widget>[
-                        Icon(Icons.mail, size: 30),
+                      children: <Widget>[
+                        Icon(Icons.camera_alt_outlined, size: 30),
                         Text(
-                          "acxellrizada@gmail.com",
+                          "$ig",
                           style: TextStyle(
                             fontSize: 12,
                             fontFamily: "poppins",
@@ -119,7 +150,7 @@ class _ProfileState extends State<Profile> {
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(builder: (context) {
-                            return pinScreen();
+                            return page1();
                           }),
                         );
                       },

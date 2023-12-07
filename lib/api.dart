@@ -67,9 +67,8 @@ class _apiScreenState extends State<apiScreen> {
                       itemCount: snapshot.data!.length,
                       itemBuilder: (context, index) {
                         return list_api(
-                          img:
-                              'https://saiyaapi.site/${snapshot.data![index]["photo"]}',
-                          desc: snapshot.data![index]['desc'],
+                          img: snapshot.data![index]['image'],
+                          desc: snapshot.data![index]['title'],
                         );
                       }),
                 );
